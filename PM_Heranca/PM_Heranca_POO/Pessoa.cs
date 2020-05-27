@@ -21,7 +21,7 @@ namespace PM_Heranca_POO
 
         }
         protected DateTime _dataNasc;
-        public  DateTime data_nasc
+        public DateTime data_nasc
         {
             get { return _dataNasc; }
             set
@@ -38,10 +38,19 @@ namespace PM_Heranca_POO
                 matricula = 0;
             this.data_nasc = data_nas;
         }
-        public int  idade()
+        public int idade()
         {
             int diferenca = DateTime.Now.Year - (this.data_nasc.Year);
             return diferenca;
-        } 
+        }
+
+        public virtual string imprimir()
+        {
+            StringBuilder aux = new StringBuilder();
+            aux.AppendLine($"Nome: {this._nome}");
+            aux.AppendLine($"Idade: {idade()}");
+
+            return aux.ToString();
+        }
     }
 }

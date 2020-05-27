@@ -31,5 +31,11 @@ namespace PM_Heranca_POO
             double mensalidade = valTotal / 6;
             return mensalidade;
         }
+        public override string imprimir()
+        {
+            StringBuilder aux = new StringBuilder(base.imprimir());
+            aux.AppendLine($"Carga Horária: {this._cargaHoraria.ToString("000")}");
+            return aux.ToString();
+        }
     }
 }

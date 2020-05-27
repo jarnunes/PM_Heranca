@@ -39,5 +39,11 @@ namespace PM_Heranca_POO
             this.dataAdmss = dataAdmissao;
             calcSalario(horaAula);
         }
+        public override string imprimir()
+        {
+            StringBuilder aux = new StringBuilder(base.imprimir());
+            aux.AppendLine($"Data Admissão: {this.dataAdmss.ToString("dd/mm/yyyy")}");
+            return aux.ToString();
+        }
     }
 }

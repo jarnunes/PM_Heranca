@@ -22,7 +22,7 @@ namespace PM_Heranca_POO
 
             foreach (Pessoa p in bandao)
             {
-                Console.WriteLine($"Nome:  {p.nome}, idade {p.idade()}");
+                Console.WriteLine(p.imprimir()) ;
             }
         }
     }
