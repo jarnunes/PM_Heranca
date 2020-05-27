@@ -13,30 +13,35 @@ namespace PM_Heranca_POO
             get { return _nome; }
             set { _nome = value; }
         }
-        protected int matricula
+        protected long _matricula;
+        public long matricula
         {
-            get { return matricula; }
-            set { matricula = value; }
+            get { return _matricula; }
+            set { _matricula = value; }
 
         }
-        protected DateTime data_nasc
+        protected DateTime _dataNasc;
+        public  DateTime data_nasc
         {
-            get { return data_nasc; }
+            get { return _dataNasc; }
             set
             {
-                data_nasc = value;
+                _dataNasc = value;
             }
         }
-        public Pessoa(string nome, int mat, DateTime data_nas)
+        public Pessoa(string nome, long mat, DateTime data_nas)
         {
             this.nome = nome;
-            this.matricula = mat;
+            if (mat >= 100000 && mat < 1000000)
+                matricula = mat;
+            else
+                matricula = 0;
             this.data_nasc = data_nas;
         }
-        public int idade()
+        public int  idade()
         {
-            TimeSpan diferenca = DateTime.Now.Subtract(this.data_nasc);
-            return int.Parse(diferenca.TotalDays.ToString());
-        }
+            int diferenca = DateTime.Now.Year - (this.data_nasc.Year);
+            return diferenca;
+        } 
     }
 }
